@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do | Make Plan</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="icon" href="photos/project.png" type="project/png"/>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class= "rounded-b-2xl">
+      <nav class=" bg-gray-800 shadow-md flex p-5 justify-between">
+        <div class="flex justify-start "><a href="index.html"><img src="photos/to-do-list.png" alt="Refresh" class="h-12"/></a></div>
+        <ul id="pc" class="hidden space-x-5 md:flex text-lg mr-5 transition bg-gray-800">
+          <a href="index.html">
+          <li class=" rounded p-2 hover:bg-orange-500 transition">
+            Home
+          </li></a>
+          <a href="history.html">
+            <li class=" rounded p-2 hover:bg-orange-500 transition">
+              History
+            </li>
+          </a>
+          <a href="about.html">
+          <li class=" rounded p-2 hover:bg-orange-500 transition">
+           About
+          </li></a>
+        </ul>
+        <button
+          id="three-lines"
+          class="md:hidden flex mr-6 rounded p-1 cursor-pointer bg-amber-100 hover:bg-amber-200 transition"
+        >
+          <img src="photos/menu-bar.png" alt="MENU" class="h-10"/>
+        </button>
+      </nav>
+      <ul id="mobile" class="hidden md:hidden bg-gray-800 border-t-1 rounded -b-2xl">
+        <a href="index.html">
+        <li class="flex flex-col items-center rounded p-2 hover:bg-orange-500 transition">
+          Home
+        </li>
+      </a>
+      <a href="history.html">
+        <li class="flex flex-col items-center rounded p-2 hover:bg-orange-500 transition">
+         History
+        </li></a>
+        <a href="about.html">
+        <li class="flex flex-col items-center rounded p-2 hover:bg-orange-500 transition">
+         About
+        </li></a>
+      </ul>
+    </div>
+
+    <div class="p-4 mt-14 flex place-content-center">
+      <div class="grid sm:grid-cols-3 grid-cols-1 gap-6 max-w-2xl ">
+        <input
+          required
+          class=" p-3 bg-gray-700 border border-gray-600 text-white rounded-md outline-none focus:ring-3 focus:ring-orange-500 transition shadow-md text-btn"
+          type="text"
+          placeholder="Add To-Do"
+          onkeydown="window.addDataByEnter(event);"
+        />
+        <input
+          placeholder="date"
+          class="  p-2 bg-gray-700 border border-gray-600 text-white cursor-pointer rounded-md outline-none focus:ring-2 focus:ring-orange-500 transition shadow-md date-btn"
+          type="date"
+          onkeydown="window.addDataByEnter(event);"
+        />
+        <button
+          class="cursor-pointer bg-orange-500 text-white p-3 rounded-2xl font-semibold hover:bg-orange-600 shadow-lg add-btn"
+          onkeydown="addDataByEnter(event);"
+          onclick="window.addList();"
+        >
+          Add List
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="text-2xl mt-14">To-Do </div>
+    <div class="h-auto w-16 mt-9">
+      <img src="photos/todolistimg.png" alt="List">
+    </div>
+    </div>
+    <div id="todo-list" class="max-w-3xl mx-auto mt-6 space-y-10 p-2"></div>
+    <script type="module" src="scripts/script.js"></script>
+    <script type="module" src="scripts/history.js"></script>
+  </body>
+</html>
