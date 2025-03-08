@@ -50,8 +50,8 @@ function displayData() {
            <p class="text-2xl text-white break-words edit-${index}">Task : ${data.name}</p>
          <p class=" text-2xl  text-white editDate-${index}">Due : ${data.date}</p>
          <div class="flex justify-center space-x-15 sm:space-x-8 lg:space-x- editButton-${index}">
-          <button class="  cursor-pointer  " onclick="window.deleteData(${index});"><img class="h-15" src="photos/done1.png"/></button>
-          <button class="   cursor-pointer  " onclick="window.todoEdit(${index});"><img class="h-15" src="photos/edit.png"/></button>
+          <button class="  cursor-pointer  border p-2 rounded" onclick="window.deleteData(${index});"><i class="fa-regular fa-circle-check fa-3x"></i></button>
+          <button class="   cursor-pointer  border p-2 rounded" onclick="window.todoEdit(${index});"><i class="fa-solid fa-pencil fa-3x"></i></button>
         </div>
           </div>
      `;
@@ -79,8 +79,8 @@ window.deleteData=function(index) {
   textData.innerHTML = `<input class="p-2 bg-gray-700 text-white border border-gray-600 rounded-md outline-none focus:ring-2 focus:ring-orange-500 w-full" type="text" id="edit-Text-${index}" value="${activityArray[index].name}"/>`;
   dateData.innerHTML = `<input class="p-2 bg-gray-700 text-white border border-gray-600 rounded-md outline-none focus:ring-2 focus:ring-orange-500 w-full" type="date" id="edit-Date-${index}" value="${activityArray[index].date}"/>`;
   changeBtn.innerHTML = `
-     <button class="  cursor-pointer " onclick="window.saveEdit(${index});"><img class="h-15" src="photos/checkmark.png"/></button>
-     <button class="  cursor-pointer " onclick="window.cancelEdit(${index});"><img class="h-15" src="photos/letter-x.png"/></button>
+     <button class="  cursor-pointer border p-2 rounded-2xl" onclick="window.saveEdit(${index});"><i class="fa-solid fa-check fa-3x"></i></button>
+     <button class="  cursor-pointer border p-2 rounded-2xl " onclick="window.cancelEdit(${index});"><i class="fa-solid fa-xmark text-3xl fa-3x"></i></button>
   `;
 }
 
